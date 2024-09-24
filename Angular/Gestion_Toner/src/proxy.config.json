@@ -1,0 +1,7 @@
+{
+  "/*":{
+    "target":"localhost:8084/api/BaseToner/",
+    "secure":false,
+    "loglevel":"debug"
+  }
+}

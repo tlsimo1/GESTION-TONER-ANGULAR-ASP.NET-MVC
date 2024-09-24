@@ -1,0 +1,32 @@
+
+<mat-toolbar>
+  <span>{{service.form.controls['idTonner'].value?"Modify tonner":"New tonner"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+  <form  (ngSubmit)="onSubmit()"  [formGroup]="service.form" class="normal-form" >
+    <mat-grid-list cols="1"  rowHeight="300px">
+      <mat-grid-tile>
+        <div class="controles-container">
+          <input type="hidden" formControlName="idTonner" />
+          <!-- <input type="hidden" formControlName="$key"/> -->
+          <mat-form-field>
+            <input formControlName="reference" matInput placeholder="Reference*" >
+            <mat-error> this filed is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="description" matInput placeholder="Description*" >
+            <mat-error> this filed is required</mat-error>
+          </mat-form-field>
+          <div class="button-row">
+            <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Save</button>
+            <button mat-raised-button color="warn" type="button" (click)="onClear()">Clear</button>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </form>
+
+
+
+
